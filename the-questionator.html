@@ -25,17 +25,40 @@
           class="form-control" rows="2">
         </textarea>
         <div class="form-group">
-          <input class="btn btn-default"
+          <input class="btn btn-primary"
             type="submit" value="Ask away" />
         </div>
       </div>
     </form>
 
-    {{> hello}}
+    {{> questionsList}}
   </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="questionsList">
+  <div id="questions">
+    
+    <hr />
+    <h6>
+      Why does the sun shine?
+      <small>Votes: 0</small>
+    </h6>
+    <a class="btn btn-default btn-xs">up</a><a class="btn btn-default btn-xs">down</a>
+
+    <hr />
+    <h6>
+      If you were a hot dog, and you were starving to death, would you eat yourself?
+      <small>Votes: 0</small>
+    </h6>
+    <a class="btn btn-default btn-xs">up</a><a class="btn btn-default btn-xs">down</a>
+
+    <hr />
+    <h6>
+      What is the airspeed velocity of an unladen swallow?
+      <small>Votes: 0</small>
+    </h6>
+    <a class="btn btn-default btn-xs">up</a><a class="btn btn-default btn-xs">down</a>
+    <hr />
+    
+  </div>
 </template>
