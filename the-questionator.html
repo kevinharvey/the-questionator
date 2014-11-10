@@ -1,5 +1,11 @@
 <head>
   <title>the-questionator</title>
+  
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
 </head>
 
 <body>
@@ -12,6 +18,18 @@
         </div>
       </div>
     </nav>
+    
+    <form role="form">
+      <div class="form-group">
+        <textarea id="question"
+          class="form-control" rows="2">
+        </textarea>
+        <div class="form-group">
+          <input class="btn btn-default"
+            type="submit" value="Ask away" />
+        </div>
+      </div>
+    </form>
 
     {{> hello}}
   </div>
