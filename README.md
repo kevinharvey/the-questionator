@@ -1,4 +1,4 @@
-the-questionator
+The Questionator
 ================
 
-The Questionator | A sample Meteor app for submitting and voting on questions.
+A sample Meteor app for submitting and voting on questions.
