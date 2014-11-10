@@ -37,28 +37,12 @@
 
 <template name="questionsList">
   <div id="questions">
-    
-    <hr />
-    <h6>
-      Why does the sun shine?
-      <small>Votes: 0</small>
-    </h6>
-    <a class="btn btn-default btn-xs">up</a><a class="btn btn-default btn-xs">down</a>
-
-    <hr />
-    <h6>
-      If you were a hot dog, and you were starving to death, would you eat yourself?
-      <small>Votes: 0</small>
-    </h6>
-    <a class="btn btn-default btn-xs">up</a><a class="btn btn-default btn-xs">down</a>
-
-    <hr />
-    <h6>
-      What is the airspeed velocity of an unladen swallow?
-      <small>Votes: 0</small>
-    </h6>
-    <a class="btn btn-default btn-xs">up</a><a class="btn btn-default btn-xs">down</a>
-    <hr />
-    
+    {{#each questions}}
+      <hr />
+      <h6>{{text}} <small>Votes: {{votes}}</small></h6>
+      <a class="btn btn-default btn-xs">up</a>
+      <a class="btn btn-default btn-xs">down</a>
+    {{/each}}    
   </div>
+  <hr />
 </template>

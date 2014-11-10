@@ -1,23 +1,20 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault("counter", 0);
+if (Meteor.isClient){
+  var questionsData = [
+  	{
+  		text: 'Why does the sun shine?',
+  		votes: 0
+  	},
+  	{
+  		text: 'If you were a hot dog, and you were starving to death, would you eat yourself?',
+  		votes: 0
+  	},
+  	{
+  		text: 'What is the airspeed velocity of an unladen swallow?',
+  		votes: 0
+  	}
+  ];
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get("counter");
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+  Template.questionsList.helpers({
+  	questions: questionsData
   });
 }
