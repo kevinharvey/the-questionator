@@ -6,5 +6,5 @@
 meteor-platform
 autopublish
 insecure
-bootstrap
+mrt:bootstrap-3
 
