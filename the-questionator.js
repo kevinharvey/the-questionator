@@ -5,7 +5,7 @@ if (Meteor.isClient) {
   Meteor.subscribe('questions');
   
   Template.questionsList.helpers({
-  	questions: Questions.find(), 
+  	questions: Questions.find({}, {sort: {votes: -1}}), 
   });
 
 }
