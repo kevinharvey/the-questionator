@@ -19,21 +19,24 @@
       </div>
     </nav>
     
-    <form role="form">
-      <div class="form-group">
-        <textarea id="question"
-          class="form-control" rows="2">
-        </textarea>
-      </div>
-      <div class="form-group">
-        <input class="btn btn-primary"
-          type="submit" value="Ask away" />
-      </div>
-    </form>
+    {{> questionForm}}
 
     {{> questionsList}}
   </div>
 </body>
+
+<template name="questionForm">
+  <form role="form">
+    <div class="form-group">
+      <textarea id="question"
+        class="form-control" rows="2"></textarea>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-primary"
+        type="submit" value="Ask away" />
+    </div>
+  </form>
+</template>
 
 <template name="questionsList">
   <div id="questions">

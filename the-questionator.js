@@ -37,6 +37,15 @@ if (Meteor.isClient) {
       Meteor.call('downvote', this._id);
     }
   });
+  
+  Template.questionForm.events({
+    'submit form': function(e) {
+      Questions.insert({
+        'text': $(e.target).find('#question').val(),
+        'votes': 0
+      });
+    }
+  });
 
 }
 
