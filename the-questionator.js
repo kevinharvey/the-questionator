@@ -1,5 +1,11 @@
 Questions = new Mongo.Collection('questions');
 
+Questions.allow({
+  insert: function(userId, doc) {
+    return !! userId;
+  }
+});
+
 Meteor.methods({
   upvote: function(questionId) {
     var question = Questions.findOne(questionId);
