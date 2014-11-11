@@ -1,12 +1,17 @@
 Questions = new Mongo.Collection('questions');
 
 if (Meteor.isClient) {
+  
+  Meteor.subscribe('questions');
+  
   Template.questionsList.helpers({
   	questions: Questions.find(), 
   });
+
 }
 
 if (Meteor.isServer) {
+
   if (Questions.find().count() === 0) {
     Questions.insert({
     	text: 'Why does the sun shine?',
@@ -23,4 +28,8 @@ if (Meteor.isServer) {
   		votes: 0
     });
   }
+
+  Meteor.publish('questions', function() {
+    return Questions.find();
+  });
 }
