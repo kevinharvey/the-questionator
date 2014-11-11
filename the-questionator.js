@@ -1,3 +1,5 @@
+Questions = new Mongo.Collection('questions');
+
 if (Meteor.isClient){
   var questionsData = [
   	{
