@@ -1,11 +1,41 @@
 Questions = new Mongo.Collection('questions');
 
+Meteor.methods({
+  upvote: function(questionId) {
+    var question = Questions.findOne(questionId);
+    Questions.update(
+      questionId,
+      { $set: { votes: question.votes + 1 }}
+    );
+  },
+  
+  downvote: function(questionId) {
+    var question = Questions.findOne(questionId);
+    Questions.update(
+      questionId,
+      { $set: { votes: question.votes - 1 }}
+    );
+  }
+});
+
 if (Meteor.isClient) {
   
   Meteor.subscribe('questions');
   
   Template.questionsList.helpers({
   	questions: Questions.find({}, {sort: {votes: -1}}), 
+  });
+  
+  Template.questionsList.events({
+    'click .vote-up': function(e) {
+      e.preventDefault();
+      Meteor.call('upvote', this._id);
+    },
+    
+    'click .vote-down': function(e) {
+      e.preventDefault();
+      Meteor.call('downvote', this._id);
+    }
   });
 
 }
