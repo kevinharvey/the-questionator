@@ -17,6 +17,6 @@ if (Meteor.isClient){
   ];
 
   Template.questionsList.helpers({
-  	questions: questionsData
+  	questions: Questions.find(), 
   });
 }
