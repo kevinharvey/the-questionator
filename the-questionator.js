@@ -46,10 +46,13 @@ if (Meteor.isClient) {
   
   Template.questionForm.events({
     'submit form': function(e) {
+      e.preventDefault();
+      var textarea = $(e.target).find('#question');
       Questions.insert({
-        'text': $(e.target).find('#question').val(),
+        'text': textarea.val(),
         'votes': 0
       });
+      textarea.val('');
     }
   });
 
